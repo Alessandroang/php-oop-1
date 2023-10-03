@@ -1,17 +1,17 @@
 <?php
 
-require_once 'Models/Movie.php';
-require_once 'Models/Genre.php';
+require_once 'Models/movie.php';
+require_once 'Models/genre.php';
 require_once 'Models/production.php';
 require_once 'Models/tvSeries.php';
 
 $movies = [
-  new Movie('Tre uomini e una gamba', 'Aldo, Giovanni e Giacomo', 1999, 'Comedy', 110,),
-  new Movie('La vita è bella', 'Roberto Benigni', 1997, 'Drama', 116),
-  new Movie('Il padrino', 'Francis Ford Coppola', 1972, 'Crime', 175),
-  new Movie('Forrest Gump', 'Robert Zemeckis', 1994, 'Drama', 142),
-  new Movie('Inception', 'Christopher Nolan', 2010, 'Action', 148),
-  new Movie('The Shawshank Redemption', 'Frank Darabont', 1994, 'Drama', 142)
+  new Movie('Tre uomini e una gamba', 'Aldo, Giovanni e Giacomo', 1999, new Genre('Comedy'), 110, 'img/images.jpeg'),
+  new Movie('La vita è bella', 'Roberto Benigni', 1997, new Genre('Drama'), 116),
+  new Movie('Il padrino', 'Francis Ford Coppola', 1972, new Genre('Crime'), 175),
+  new Movie('Forrest Gump', 'Robert Zemeckis', 1994, new Genre('Drama'), 142),
+  new Movie('Inception', 'Christopher Nolan', 2010, new Genre('Action'), 148),
+  new Movie('The Shawshank Redemption', 'Frank Darabont', 1994, new Genre('Drama'), 142)
 ];
 
 // Creazione degli oggetti TvSeries
@@ -79,6 +79,7 @@ $tvSeries = [
 </nav>
 </header>
 <div class="container mt-4">
+  <h1>Film</h1>
         <div class="row">
             <?php foreach ($movies as $movie) : ?>
                 <div class="col-md-6">
@@ -89,7 +90,7 @@ $tvSeries = [
                   </div>
                 </div>
             <?php endforeach; ?>
-
+<h1>Serie Tv</h1>
             <?php foreach ($tvSeries as $tvSerie) : ?>
                 <div class="col-md-6">
                   <div class="card mt-4">

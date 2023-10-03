@@ -1,15 +1,15 @@
 <?php 
 class Genre {
-    public $genre;
+    public $name;
 
-    public function __construct($genre) {
-        $this->genre = $genre;
+    public function __construct($name) {
+        $this->name = $name;
     }
 
-    public function getGenre() {
-        return $this->genre;
+    public function getInfo() {
+        return "Genere: {$this->name}";
     }
 }
 
-
 ?>
+

@@ -1,5 +1,5 @@
 <?php
-require_once 'Production.php';
+require_once 'production.php';
 
 class TvSeries extends Production {
     public $aired_from_year;
