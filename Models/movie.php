@@ -1,24 +1,19 @@
 <?php
+require_once 'Production.php';
 
-class Movie {
-    // Variabili d'istanza (attributi)
-    public $title;
-    public $author;
-    public $year;
+class Movie extends Production {
+    public $genre;
+    public $running_time;
+    
 
-    // Costruttore
-    public function __construct($title, $author, $year) {
-        $this->title = $title;
-        $this->author = $author;
-        $this->year = $year;
+    public function __construct($title, $author, $year, $genre, $running_time) {
+        parent::__construct($title, $author, $year);
+        $this->genre = $genre;
+        $this->running_time = $running_time;
     }
 
-    // Metodo per ottenere informazioni sul film
-    public function getMovieInfo() {
-        return "Titolo: {$this->title}<br>" .
-           "Autore: {$this->author}<br>" .
-           "Anno: {$this->year}";
+    public function getInfo() {
+        return parent::getInfo() . "<br>Genere: {$this->genre}<br>Durata: {$this->running_time} minuti";
     }
 }
-
 ?>

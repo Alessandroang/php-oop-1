@@ -41,5 +41,35 @@ $genresData = [
     'Thriller',
 ];
 
+$tvSeriesData = [
+    [
+        'title' => 'Breaking Bad',
+        'author' => 'Vince Gilligan',
+        'year' => 2008,
+        'aired_from_year' => 2008,
+        'aired_to_year' => 2013,
+        'number_of_episodes' => 62,
+        'number_of_seasons' => 5
+    ],
+    [
+        'title' => 'Stranger Things',
+        'author' => 'The Duffer Brothers',
+        'year' => 2016,
+        'aired_from_year' => 2016,
+        'aired_to_year' => 2023,
+        'number_of_episodes' => 34,
+        'number_of_seasons' => 4
+    ],
+    [
+        'title' => 'Game of Thrones',
+        'author' => 'David Benioff, D. B. Weiss',
+        'year' => 2011,
+        'aired_from_year' => 2011,
+        'aired_to_year' => 2019,
+        'number_of_episodes' => 73,
+        'number_of_seasons' => 8
+    ]
+];
+
 
 ?>

@@ -2,31 +2,25 @@
 
 require_once 'Models/Movie.php';
 require_once 'Models/Genre.php';
-require_once 'db.php';
+require_once 'Models/production.php';
+require_once 'Models/tvSeries.php';
 
-// Creazione di un'istanza della classe Genre
+$movies = [
+  new Movie('Tre uomini e una gamba', 'Aldo, Giovanni e Giacomo', 1999, 'Comedy', 110,),
+  new Movie('La vita è bella', 'Roberto Benigni', 1997, 'Drama', 116),
+  new Movie('Il padrino', 'Francis Ford Coppola', 1972, 'Crime', 175),
+  new Movie('Forrest Gump', 'Robert Zemeckis', 1994, 'Drama', 142),
+  new Movie('Inception', 'Christopher Nolan', 2010, 'Action', 148),
+  new Movie('The Shawshank Redemption', 'Frank Darabont', 1994, 'Drama', 142)
+];
 
-// $genre1 = new Genre($genresData[0]);
-// $genre2 = new Genre($genresData[1]);
+// Creazione degli oggetti TvSeries
+$tvSeries = [
+  new TvSeries('Breaking Bad', 'Vince Gilligan', 2008, 2008, 2013, 62, 5),
+  new TvSeries('Stranger Things', 'The Duffer Brothers', 2016, 2016, 2023, 34, 4),
+  new TvSeries('Game of Thrones', 'David Benioff, D. B. Weiss', 2011, 2011, 2019, 73, 8)
+];
 
-// Creazione di un'istanza della classe Movie
-
-// $movie1 = new Movie($moviesData[0]['title'], $moviesData[0]['author'], $moviesData[0]['year'], $genre1->genre);
-// $movie2 = new Movie($moviesData[1]['title'], $moviesData[1]['author'], $moviesData[1]['year'], $genre2->genre);
-
-// Stampare le informazioni sul primo film
-
-// echo "Informazioni sul primo film:<br>";
-// echo $movie1->getMovieInfo() . "<br><br>";
-// echo "Genere del primo film:<br>";  
-// echo $genre1->getGenre() . "<br><br>";
-
-// Stampare le informazioni sul secondo film
-
-// echo "Informazioni sul secondo film:<br>";
-// echo $movie2->getMovieInfo() . "<br><br>";
-// echo "Genere del secondo film:<br>";  
-// echo $genre2->getGenre() . "<br>";
 
 
 ?>
@@ -84,22 +78,28 @@ require_once 'db.php';
   </div>
 </nav>
 </header>
-    <div class="container mt-4">
+<div class="container mt-4">
         <div class="row">
-
-            <?php foreach ($moviesData as $index => $movie) : ?>
+            <?php foreach ($movies as $movie) : ?>
                 <div class="col-md-6">
-                    <div class="card mt-4">
+                  <div class="card mt-4">
                         <div class="card-body">
-                            <h5 class="card-title"><?= $movie['title'] ?></h5>
-                            <p class="card-text">Autore: <?= $movie['author'] ?></p>
-                            <p class="card-text">Anno: <?= $movie['year'] ?></p>
-                            <p class="card-text">Genere: <?= $genresData[$index] ?></p>
+                        <h6 class="card-title"><?= $movie->getInfo() ?></h6>
                         </div>
-                    </div> 
+                  </div>
                 </div>
             <?php endforeach; ?>
 
+            <?php foreach ($tvSeries as $tvSerie) : ?>
+                <div class="col-md-6">
+                  <div class="card mt-4">
+                    <div class="card-body">
+                    <h6 class="card-title"><?= $tvSerie->getInfo() ?></h6>
+                    </div>
+                      
+                  </div>
+                </div>
+            <?php endforeach; ?>
         </div>
     </div>
 
